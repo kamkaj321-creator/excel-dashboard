@@ -5,8 +5,13 @@ from flask import Flask, render_template, request, jsonify, send_from_directory,
 from datetime import datetime
 
 app = Flask(__name__)
-DATA_FILE = 'data.json'
-UPLOAD_FOLDER = 'uploads'
+# Vercel compatibility: Use /tmp for writable files in serverless environment
+IS_VERCEL = "VERCEL" in os.environ
+BASE_DIR = "/tmp" if IS_VERCEL else "."
+
+DATA_FILE = os.path.join(BASE_DIR, 'data.json')
+UPLOAD_FOLDER = os.path.join(BASE_DIR, 'uploads')
+
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 def _load_data():
