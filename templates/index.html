@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Dashboard</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header class="main-header">
+            <div class="logo-container">
+                <img src="/static/images/temu_logo_icon.png" alt="TEMU" class="temu-logo">
+            </div>
+            <h1>DASHBOARD</h1>
+            <div class="header-right">
+                <div class="upload-section">
+                    <label for="excel-upload" class="upload-btn">
+                        <span>Upload File (Excel/CSV)</span>
+                        <input type="file" id="excel-upload" accept=".xlsx, .xls, .csv" hidden>
+                    </label>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="product-management">
+                <div class="action-column left">
+                    <button id="add-my-product-btn" class="action-btn grey">ADD MY PRODUCT</button>
+                    <div id="product-info-container" class="product-info">
+                        <!-- Product descriptions will be added here -->
+                    </div>
+                </div>
+
+                <div class="vertical-divider"></div>
+
+                <div class="action-column right">
+                    <button id="add-system-product-btn" class="action-btn grey">ADD SYSTEM PRODUCT</button>
+                    <div id="system-products-container" class="system-products">
+                        <!-- System products with LINK buttons will be added here -->
+                    </div>
+                </div>
+            </section>
+
+            <section class="dashboard-section">
+                <div class="section-header">
+                    <h2>Dashboard (Settings)</h2>
+                    <p class="section-desc">Enter your reference data here. Matches will be found in the uploaded Excel
+                        based on the 'name' column.</p>
+                </div>
+                <div class="controls">
+                    <button id="add-row" class="btn secondary">Add Row</button>
+                    <button id="add-col" class="btn secondary">Add Column</button>
+                    <button id="reset-table" class="btn danger">Reset Table</button>
+                </div>
+
+                <div class="table-container">
+                    <table id="dynamic-table">
+                        <thead>
+                            <tr id="table-header">
+                                <th contenteditable="true">name</th>
+                                <th contenteditable="true">buyer</th>
+                                <th contenteditable="true">unit</th>
+                                <th contenteditable="true">sale</th>
+                                <th class="actions-col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+                            <!-- Dashboard rows -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="preview-section" class="preview-section"
+                style="display: none; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border);">
+                <div class="section-header">
+                    <h2>Excel Preview (Results)</h2>
+                    <p class="section-desc">Showing the updated contents of your uploaded file.</p>
+                    <div id="download-container" style="margin: 1rem 0;"></div>
+                </div>
+                <div class="table-container">
+                    <table id="preview-table">
+                        <thead id="preview-header"></thead>
+                        <tbody id="preview-body"></tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+
+</html>

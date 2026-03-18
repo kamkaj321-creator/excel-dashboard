@@ -1,0 +1,22 @@
+# Environments
+venv/
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Local data and uploads
+uploads/
+data.json
+*.xlsx
+*.xls
+*.csv
+!test_data.csv
+
+# IDEs
+.vscode/
+.idea/
+.DS_Store

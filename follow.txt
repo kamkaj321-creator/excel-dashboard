@@ -1,0 +1,8 @@
+In dashboar the user can write his own Name, buyer,unit,sale columns
+When the user uploads and excel sheet in that dashboard if the
+name value of any row of the dashboard matches with the name value of any row
+of the uploaded sheet then the buyer,unit,sale values of that row of the uploaded sheet
+should be updated with the buyer,unit,sale values of that row of the dashboard.
+Moreover in the uploaded sheet there may be so many names in the name cell of any product.
+All the names should clear and the single name which will be on dashboard name should show in the 
+uploaded sheet's name column.
